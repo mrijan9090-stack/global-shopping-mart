@@ -1,56 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101827">
-<title>Global Shopping Mart | Mobiles & Accessories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Globixa Global Shopping Mart</title>
 <style>
-:root{--ink:#101827;--muted:#667085;--brand:#175cd3;--bg:#f5f7fb;--line:#e7ebf2}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
-header{background:#101827;color:#fff;padding:16px max(18px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.logo{font-size:20px;font-weight:800}.logo span{color:#84caff}
-nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:#e5e7eb;text-decoration:none;font-size:14px}
-.hero{background:linear-gradient(120deg,#10264d,#175cd3);color:white;padding:54px 20px}
-.wrap{max-width:1120px;margin:auto}.hero h1{font-size:clamp(30px,5vw,48px);margin:0 0 12px}.hero p{color:#e5edff;max-width:650px;line-height:1.6}
-.search{display:flex;max-width:560px;margin-top:22px;background:white;border-radius:12px;padding:6px;gap:6px}
-.search input{min-width:0;flex:1;border:0;padding:12px;font-size:15px;outline:0}.search button,.btn{border:0;background:#fdb022;color:#172033;font-weight:700;border-radius:9px;padding:12px 16px;text-decoration:none;cursor:pointer}
-main{max-width:1120px;margin:30px auto;padding:0 18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap;margin:28px 0 16px}.section-head h2{margin:0;font-size:24px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 16px #1018280a}
-.card .emoji{font-size:38px}.card h3{margin:12px 0 7px}.card p{color:var(--muted);font-size:14px;line-height:1.5;min-height:42px}.card a{display:inline-block;margin-top:8px;color:var(--brand);font-weight:700;text-decoration:none}
-.notice{background:#fff8e6;border:1px solid #f9df9a;border-radius:12px;padding:14px 16px;color:#694b00;font-size:13px;line-height:1.5;margin-top:24px}
-footer{background:#101827;color:#d0d5dd;padding:28px 18px;text-align:center;margin-top:44px;font-size:13px}
-@media(max-width:560px){header{align-items:flex-start}.hero{padding:38px 18px}.search button{padding:11px 12px}.section-head h2{font-size:21px}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#222}
+header{background:#10243a;color:white;padding:18px}
+header h1{margin:0;font-size:25px}
+header p{margin:7px 0 0;color:#cbd5e1}
+nav{background:#183653;padding:12px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-weight:bold}
+.hero{padding:35px 20px;text-align:center;background:linear-gradient(120deg,#10243a,#247b89);color:white}
+.hero h2{font-size:30px;margin:5px}
+.hero p{font-size:16px}
+button{cursor:pointer;border:0;border-radius:8px;padding:12px 16px;background:#0d766e;color:white;font-weight:bold}
+.wrap{max-width:1100px;margin:auto;padding:20px}
+.search{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-bottom:15px}
+.categories{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 22px}
+.categories button{background:#e2e8f0;color:#183653}
+.categories button.active{background:#183653;color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px}
+.card{background:white;border-radius:12px;padding:15px;box-shadow:0 2px 9px #0001}
+.photo{height:140px;display:flex;align-items:center;justify-content:center;font-size:65px;background:#eef3f7;border-radius:10px}
+.card h3{font-size:17px}
+.price{font-weight:bold;color:#0d766e;font-size:18px}
+.card button{width:100%;margin-top:8px}
+.cart{background:white;border-radius:12px;padding:18px;margin-top:25px}
+footer{margin-top:30px;background:#10243a;color:white;padding:25px;text-align:center}
+small{color:#64748b}
 </style>
 </head>
 <body>
-<header><div class="logo">GLOBAL <span>SHOPPING MART</span></div><nav><a href="#mobiles">Mobiles</a><a href="#accessories">Accessories</a><a href="#shop">Shop online</a><label style="font-size:14px;color:#e5e7eb">Marketplace <select id="marketSelect" aria-label="Choose Amazon marketplace" style="margin-left:6px;padding:7px;border-radius:8px"><option value="com">USA</option><option value="in">India</option></select></label></nav></header>
-<section class="hero"><div class="wrap"><h1>Smart Shopping Starts Here</h1><p>Explore mobile phones and everyday mobile accessories from popular brands. Find products and compare options before you buy.</p><form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="Search phones, earbuds, chargers..." aria-label="Search products"><button type="submit">Search</button></form></div></section>
-<main>
-<section id="mobiles"><div class="section-head"><div><h2>Mobile Phones</h2><p>Explore popular smartphone brands</p></div></div><div class="grid">
-<article class="card"><div class="emoji">📱</div><h3>Apple iPhone</h3><p>Browse iPhone models and available options.</p><a href="https://www.amazon.com/s?k=Apple+iPhone" data-amazon-query="Apple+iPhone" target="_blank" rel="noopener">Explore iPhone ↗</a></article>
-<article class="card"><div class="emoji">📱</div><h3>Samsung</h3><p>Discover Galaxy phones across different ranges.</p><a href="https://www.amazon.com/s?k=Samsung+Galaxy+phone" data-amazon-query="Samsung+Galaxy+phone" target="_blank" rel="noopener">Explore Samsung ↗</a></article>
-<article class="card"><div class="emoji">📱</div><h3>Xiaomi & Redmi</h3><p>Find Xiaomi and Redmi smartphone options.</p><a href="https://www.amazon.com/s?k=Xiaomi+Redmi+phone" data-amazon-query="Xiaomi+Redmi+phone" target="_blank" rel="noopener">Explore Xiaomi ↗</a></article>
-<article class="card"><div class="emoji">📱</div><h3>Oppo, Vivo & Realme</h3><p>Browse phones from other popular Android brands.</p><a href="https://www.amazon.com/s?k=Oppo+Vivo+Realme+phone" data-amazon-query="Oppo+Vivo+Realme+phone" target="_blank" rel="noopener">Explore Android phones ↗</a></article>
-</div></section>
-<section id="accessories"><div class="section-head"><div><h2>Mobile Accessories</h2><p>Useful add-ons for your everyday devices</p></div></div><div class="grid">
-<article class="card"><div class="emoji">🎧</div><h3>Earbuds & Headphones</h3><p>Wireless earbuds, Bluetooth headsets and headphones.</p><a href="https://www.amazon.com/s?k=wireless+earbuds+headphones" data-amazon-query="wireless+earbuds+headphones" target="_blank" rel="noopener">Explore audio ↗</a></article>
-<article class="card"><div class="emoji">🔋</div><h3>Power Banks</h3><p>Portable charging options for phones and devices.</p><a href="https://www.amazon.com/s?k=power+bank" data-amazon-query="power+bank" target="_blank" rel="noopener">Explore power banks ↗</a></article>
-<article class="card"><div class="emoji">🔌</div><h3>Chargers & Cables</h3><p>Charging adapters, USB cables and fast chargers.</p><a href="https://www.amazon.com/s?k=phone+fast+charger+cable" data-amazon-query="phone+fast+charger+cable" target="_blank" rel="noopener">Explore chargers ↗</a></article>
-<article class="card"><div class="emoji">🛡️</div><h3>Covers & Screen Protectors</h3><p>Phone cases, protective glass and screen guards.</p><a href="https://www.amazon.com/s?k=phone+case+screen+protector" data-amazon-query="phone+case+screen+protector" target="_blank" rel="noopener">Explore protection ↗</a></article>
-<article class="card"><div class="emoji">⌚</div><h3>Smart Watches</h3><p>Explore wearable devices and smart watch accessories.</p><a href="https://www.amazon.com/s?k=smart+watches" data-amazon-query="smart+watches" target="_blank" rel="noopener">Explore watches ↗</a></article>
-<article class="card"><div class="emoji">🚗</div><h3>Car Mobile Accessories</h3><p>Car mounts, holders and in-car charging accessories.</p><a href="https://www.amazon.com/s?k=car+phone+mount+charger" data-amazon-query="car+phone+mount+charger" target="_blank" rel="noopener">Explore car accessories ↗</a></article>
-</div></section>
-<section id="shop"><div class="section-head"><div><h2>Shop Online</h2><p>Search a product category on Amazon</p></div></div><div class="card"><h3>Find more products</h3><p>Use the search box above to find phones and accessories. Product availability, seller, delivery and final price are shown by the marketplace.</p><a href="https://www.amazon.com/" data-amazon-home="true" target="_blank" rel="noopener">Visit Amazon ↗</a></div></section>
-<div class="notice"><strong>Important:</strong> These links currently open Amazon category searches; they are not affiliate links and do not earn commission yet. Affiliate tracking will be added only after the relevant Amazon Associates account is approved. Product availability, seller, delivery and final price are set by Amazon.</div>
-</main>
-<footer>© <span id="year"></span> Global Shopping Mart · Mobiles & Accessories</footer>
+<header>
+<h1>Globixa</h1>
+<p>Global Shopping Mart | Shop Around the World</p>
+</header>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#cart">My Cart</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+<h2>Welcome to Globixa</h2>
+<p>Discover products. Shop smarter.</p>
+<p>Fashion • Electronics • Home • Accessories</p>
+</section>
+
+<div class="wrap">
+<input class="search" id="search" placeholder="Search products..." oninput="render()">
+
+<div class="categories" id="cats"></div>
+
+<h2 id="products">Our Products</h2>
+<div class="grid" id="grid"></div>
+
+<section class="cart" id="cart">
+<h2>Shopping Cart</h2>
+<div id="cartItems">Your cart is empty.</div>
+<p id="total"></p>
+<button onclick="order()">Order via WhatsApp</button>
+<p><small>WhatsApp order request. Payment and delivery will be confirmed separately.</small></p>
+</section>
+</div>
+
+<footer id="contact">
+<h3>Globixa Global Shopping Mart</h3>
+<p>Shopping made simple</p>
+<p>Worldwide shopping platform</p>
+</footer>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-var marketSelect=document.getElementById('marketSelect');
-function setMarketplace(){var domain=marketSelect.value==='in'?'amazon.in':'amazon.com';document.querySelectorAll('[data-amazon-query]').forEach(function(a){a.href='https://www.'+domain+'/s?k='+a.getAttribute('data-amazon-query');});document.querySelectorAll('[data-amazon-home]').forEach(function(a){a.href='https://www.'+domain+'/';});}
-marketSelect.addEventListener('change',setMarketplace);setMarketplace();
-document.getElementById('searchForm').addEventListener('submit',function(e){e.preventDefault();var q=document.getElementById('searchInput').value.trim();if(q)window.open('https://www.'+(marketSelect.value==='in'?'amazon.in':'amazon.com')+'/s?k='+encodeURIComponent(q),'_blank','noopener');});
+const products=[
+{id:1,name:"Classic Watch",price:3500,cat:"Fashion",emoji:"⌚"},
+{id:2,name:"Wireless Headphones",price:4500,cat:"Electronics",emoji:"🎧"},
+{id:3,name:"Stylish Sunglasses",price:1800,cat:"Fashion",emoji:"🕶️"},
+{id:4,name:"Travel Backpack",price:3200,cat:"Accessories",emoji:"🎒"},
+{id:5,name:"Smart Lamp",price:2500,cat:"Home",emoji:"💡"},
+{id:6,name:"Running Shoes",price:5500,cat:"Fashion",emoji:"👟"},
+{id:7,name:"Mobile Cover",price:1200,cat:"Accessories",emoji:"📱"},
+{id:8,name:"Coffee Mug",price:900,cat:"Home",emoji:"☕"},
+{id:9,name:"Bluetooth Speaker",price:3800,cat:"Electronics",emoji:"🔊"},
+{id:10,name:"Wallet",price:2000,cat:"Accessories",emoji:"👛"},
+{id:11,name:"Desk Clock",price:1500,cat:"Home",emoji:"⏰"},
+{id:12,name:"Camera",price:12000,cat:"Electronics",emoji:"📷"}
+];
+
+let cart=[];
+let category="All";
+
+const cats=["All",...new Set(products.map(p=>p.cat))];
+
+function drawCats(){
+document.getElementById("cats").innerHTML=cats.map(c=>
+`<button class="${c===category?'active':''}" onclick="category='${c}';drawCats();render()">${c}</button>`
+).join("");
+}
+
+function render(){
+let q=document.getElementById("search").value.toLowerCase();
+let list=products.filter(p=>(category==="All"||p.cat===category)&&p.name.toLowerCase().includes(q));
+document.getElementById("grid").innerHTML=list.map(p=>`
+<div class="card">
+<div class="photo">${p.emoji}</div>
+<h3>${p.name}</h3>
+<p class="price">PKR ${p.price.toLocaleString()}</p>
+<small>${p.cat}</small>
+<button onclick="add(${p.id})">Add to Cart</button>
+</div>`).join("")||"No products found";
+showCart();
+}
+
+function add(id){
+cart.push(products.find(p=>p.id===id));
+showCart();
+}
+
+function removeItem(i){
+cart.splice(i,1);
+showCart();
+}
+
+function showCart(){
+document.getElementById("cartItems").innerHTML=cart.length?
+cart.map((p,i)=>`${p.emoji} ${p.name} — PKR ${p.price.toLocaleString()} <button onclick="removeItem(${i})">Remove</button><br><br>`).join(""):"Your cart is empty.";
+let sum=cart.reduce((a,p)=>a+p.price,0);
+document.getElementById("total").innerHTML=cart.length?"Total: <b>PKR "+sum.toLocaleString()+"</b>":"";
+}
+
+function order(){
+if(!cart.length){alert("Your cart is empty.");return;}
+let text="Hello Globixa! I want to order:\\n"+cart.map(p=>p.name+" - PKR "+p.price).join("\\n")+"\\nTotal: PKR "+cart.reduce((a,p)=>a+p.price,0);
+let phone="923000000000";
+window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(text));
+}
+
+drawCats();
+render();
 </script>
-</body></html>
+</body>
+</html>
